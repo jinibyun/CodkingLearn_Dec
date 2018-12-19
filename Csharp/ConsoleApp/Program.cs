@@ -15,10 +15,10 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             // A. Basic - Syntax
-            // Basic();
+            Basic();
 
             // B. Intermediate - OOP 3 Characteristics & Other things of class
-            Intermediate_OOP3Characteristics();
+            // Intermediate_OOP3Characteristics();
             // Intermediate_OtherThings();
             // C. Advanced
             // Advanced();         
