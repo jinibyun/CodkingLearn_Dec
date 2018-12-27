@@ -617,7 +617,15 @@ namespace ConsoleApp.Assignment
             // 9.   ?.   (questiong and dot operator)
             // refer to https://stackoverflow.com/questions/28352072/what-does-question-mark-and-dot-operator-mean-in-c-sharp-6-0
             // copy and paste is allowed
+            Console.WriteLine("=====9. questiong and dot operator ======");
+            Action<string> consoleWrite = null;
 
+            consoleWrite?.Invoke("Test 1");
+
+            consoleWrite = (ss) => Console.WriteLine(ss);
+
+            consoleWrite?.Invoke("Test 2");
+            Console.WriteLine("\n");
 
             // 10. Fibanocci array
             Console.WriteLine("===== 10. Fibanocci array ======");
@@ -633,13 +641,20 @@ namespace ConsoleApp.Assignment
             // 11. Research "yield return" and make sample code of it 
             // copy and paste is allowed
             Console.WriteLine("===== 11. yield return ======");
+            // Yield keyword helps to do custom stateful iteration over a collection
+            // 1) Custom interation without temp collection
+            // 2) Stateful iteration
 
-
-
-
+            FillValues();
+            foreach (int i in RunningTotal())
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadLine();
 
         }
 
+        // #10. Fibanocci array method
         public int sumFib(int[] fibArray)
         {
             if (fibArray[fibArray.Length-1] <= 0)
@@ -654,5 +669,54 @@ namespace ConsoleApp.Assignment
             }
             return sum;
         }
+
+        // #11. Yield keyword class
+        static List<int> MyList = new List<int>();
+        static void FillValues()
+        {
+            MyList.Add(1);
+            MyList.Add(2);
+            MyList.Add(3);
+            MyList.Add(4);
+            MyList.Add(5);
+            MyList.Add(6);
+        }
+
+        static IEnumerable<int> Filter()
+        {
+            // WITHOUT YIELD
+            /* List<int> temp = new List<int>();
+
+             foreach(int i in MyList)
+             {
+                 if(i>3) //compare
+                 {
+                     temp.Add(i);
+                 }
+             }
+             return temp;*/
+
+            // WITH YIELD
+            foreach (int i in MyList)
+            {
+                if (i > 3)
+                {
+                    yield return i;
+                }
+            }
+        }
+
+
+        static IEnumerable<int> RunningTotal()
+        {
+            int runningtotal = 0;
+            foreach(int i in MyList)
+            {
+                runningtotal += i;
+                yield return (runningtotal);
+            }
+        }
+
+
     }
 }
