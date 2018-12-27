@@ -15,8 +15,13 @@ namespace ConsoleApp.Beginner
             // one dimensional
             string[] players = new string[10];
             string[] Regions = { "Toronto", "Vancouver", "Montreal" };
+            // new string[3] 생략
+            // 확장 가능 ={"toronto","vancouver","montreal", "seoul"};
+            string[] Regions_unlimit = { };
+            //무한정 쓸 수 있음
+            string[] Region2 = new string[3]{ "Toronto", "Vancouver", "Montreal" };
 
-            // 2 dimensional
+            // 2 dimensional: table 형식
             string[,] Province = { { "Toronto", "ON" }, { "Vancouver", "BC" } };
 
             // jagged array: 
@@ -32,6 +37,7 @@ namespace ConsoleApp.Beginner
 
             A[0][0] = 1;
             A[0][1] = 2;
+            // A[0]=new int[2]{1,2};
 
             // array and loop
             int sum = 0;

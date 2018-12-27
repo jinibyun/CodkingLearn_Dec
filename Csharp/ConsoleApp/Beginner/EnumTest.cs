@@ -11,7 +11,8 @@ namespace ConsoleApp.Beginner
         Seoul,   // 0
         Daejun,  // 1
         Busan = 5,  // 5
-        Jeju = 10   // 10
+        Jeju = 10,   // 10
+        Toronto = 7  //7
     }
 
 
@@ -20,16 +21,17 @@ namespace ConsoleApp.Beginner
         City myCity;
 
         public void Test()
-        {            
+        {
             // Access to enum
-            myCity = City.Seoul;
+            myCity = City.Toronto;
 
             // enum to int casting
             int cityValue = (int)myCity;
 
-            if (myCity == City.Seoul) // enum comparison
+            if (myCity == City.Toronto) // enum comparison
             {
-                Console.WriteLine("Welcome to Seoul");
+                Console.WriteLine("Welcome to " + myCity.ToString() + 
+                    "\n City Code is : " + cityValue.ToString());
             }
         }
     }

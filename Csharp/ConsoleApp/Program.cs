@@ -15,7 +15,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             // A. Basic - Syntax
-            Basic();
+            //Basic();
 
             // B. Intermediate - OOP 3 Characteristics & Other things of class
             // Intermediate_OOP3Characteristics();
@@ -24,7 +24,7 @@ namespace ConsoleApp
             // Advanced();         
 
             // D. Assignment
-            // AssignmentTest();
+             AssignmentTest();
         }
 
         private static void AssignmentTest()
@@ -309,97 +309,97 @@ namespace ConsoleApp
         private static void Basic()
         {
             // 1. DataType
-            Console.WriteLine("=================== Data Type ================");
-            var dt = new DataType();
-            dt.Test();
+            //Console.WriteLine("=================== Data Type ================");
+            //var dt = new DataType();
+            //dt.Test();
 
             // 2. Variable And Constant
-            Console.WriteLine("=================== Variable & Constant ================");
-            var vnc = new VariableAndConstant();
-            vnc.Test();
+            //Console.WriteLine("=================== Variable & Constant ================");
+            //var vnc = new VariableAndConstant();
+            //vnc.Test();
 
-            // 3. Array
-            Console.WriteLine("=================== Array ================");
-            var arr = new ArrayTest();
-            arr.Test();
+            //// 3. Array
+            //Console.WriteLine("=================== Array ================");
+            //var arr = new ArrayTest();
+            //arr.Test();
 
-            // 4. String
-            Console.WriteLine("=================== String ================");
-            var strTest = new StringTest();
-            strTest.Test();
+            //// 4. String
+            //Console.WriteLine("=================== String ================");
+            //var strTest = new StringTest();
+            //strTest.Test();
 
-            // 5. Enum
-            Console.WriteLine("=================== Enum ================");
-            var enumTest = new EnumTest();
-            enumTest.Test();
+            //// 5. Enum
+            //Console.WriteLine("=================== Enum ================");
+            //var enumTest = new EnumTest();
+            //enumTest.Test();
 
-            // 6. Operator
-            Console.WriteLine("=================== Operator ================");
-            var operatorTest = new OperatorTest();
-            operatorTest.Test();
+            //// 6. Operator
+            //Console.WriteLine("=================== Operator ================");
+            //var operatorTest = new OperatorTest();
+            //operatorTest.Test();
 
-            // 7. If
-            Console.WriteLine("=================== If ================");
-            var ifTest = new IfTest();
-            ifTest.Test();
+            //// 7. If
+            //Console.WriteLine("=================== If ================");
+            //var ifTest = new IfTest();
+            //ifTest.Test();
 
-            // 8. loop
-            Console.WriteLine("=================== Loop ================");
-            var loopTest = new LoopTest();
-            loopTest.Test();
+            //// 8. loop
+            //Console.WriteLine("=================== Loop ================");
+            //var loopTest = new LoopTest();
+            //loopTest.Test();
 
-            // 9. yield keword: when collection data can be returned one by one in turn
+            //// 9. yield keword: when collection data can be returned one by one in turn
             Console.WriteLine("=================== yield return ================");
             var yieldReturnTest = new yieldTest();
             yieldReturnTest.Test();
 
-            // 10. Exception
-            Console.WriteLine("=================== Exception ================");
-            var exceptionTest = new ExceptionTest();
-            exceptionTest.Test(0, 0);
+            //// 10. Exception
+            //Console.WriteLine("=================== Exception ================");
+            //var exceptionTest = new ExceptionTest();
+            //exceptionTest.Test(0, 0);
 
-            // 11. Struct
-            Console.WriteLine("=================== Struct ================");
-            var structTest = new StructTest();
-            structTest.ToString();
+            //// 11. Struct
+            //Console.WriteLine("=================== Struct ================");
+            //var structTest = new StructTest();
+            //structTest.ToString();
 
-            // 12. Nullable
-            Console.WriteLine("=================== Nullable ================");
-            var nullableTest = new NullableTest();
-            nullableTest.Test(null, null, DateTime.Now, null);
+            //// 12. Nullable
+            //Console.WriteLine("=================== Nullable ================");
+            //var nullableTest = new NullableTest();
+            //nullableTest.Test(null, null, DateTime.Now, null);
 
-            // 13. Method
-            Console.WriteLine("=================== Method ================");
-            var methodTest = new MethodTest();
-            // 13-1
-            int val = 1000;
-            methodTest.TestPassByValue(val);
+            //// 13. Method
+            //Console.WriteLine("=================== Method ================");
+            //var methodTest = new MethodTest();
+            //// 13-1
+            //int val = 1000;
+            //methodTest.TestPassByValue(val);
 
-            Console.WriteLine("variable val's value is not changed: {0}", val);
-            // 13-2
-            int x = 0;
-            double y = 1.0;
-            double ret = methodTest.TestPassByRef(ref x, ref y);
-            Console.WriteLine("variable val's value is actually changed: x: {0} y: {1}", x, y);
+            //Console.WriteLine("variable val's value is not changed: {0}", val);
+            //// 13-2
+            //int x = 0;
+            //double y = 1.0;
+            //double ret = methodTest.TestPassByRef(ref x, ref y);
+            //Console.WriteLine("variable val's value is actually changed: x: {0} y: {1}", x, y);
 
-            Console.WriteLine(x);
-            Console.WriteLine(y);
-            
-            // 13-3
-            int c, d;
-            bool bret = methodTest.TestPassByOut(10, 20, out c, out d);
-            Console.WriteLine("variable val's value is actually changed: c: {0} d: {1}", c, d);
+            //Console.WriteLine(x);
+            //Console.WriteLine(y);
 
-            // differenc between ref keyword and out keyword 
+            //// 13-3
+            //int c, d;
+            //bool bret = methodTest.TestPassByOut(10, 20, out c, out d);
+            //Console.WriteLine("variable val's value is actually changed: c: {0} d: {1}", c, d);
 
-            // 13-4.
-            var returnValue = methodTest.TestDefaultParam(1, 2);
-            Console.WriteLine("Default parameter test: " + returnValue);
-            var returnValue2 = methodTest.TestDefaultParam(1, 2, "-----");
+            //// differenc between ref keyword and out keyword 
 
-            // 13-5.            
-            var returnParamsValue = methodTest.TestParams(1, 2, 3, 4,5,6,7,8,9,10);
-            Console.WriteLine("params keyword test: " + returnParamsValue);
+            //// 13-4.
+            //var returnValue = methodTest.TestDefaultParam(1, 2);
+            //Console.WriteLine("Default parameter test: " + returnValue);
+            //var returnValue2 = methodTest.TestDefaultParam(1, 2, "-----");
+
+            //// 13-5.            
+            //var returnParamsValue = methodTest.TestParams(1, 2, 3, 4,5,6,7,8,9,10);
+            //Console.WriteLine("params keyword test: " + returnParamsValue);
         }
 
         private static void ClassTest_NameChanged(object sender, EventArgs e)

@@ -61,9 +61,24 @@ namespace ConsoleApp.Beginner
             string result3;
 
             result3 = (number % 2 == 0) ? "Even Number" : "Odd Number";
+            // 전자가 참이면 "Even Number"
+            // else "Odd Number"
+
+            // if(number%2 == 0)
+            //result3 = "Even Number";
+            // else
+            // result3="Odd Number";
+
             Console.WriteLine("{0} is {1}", number, result3);
 
             // 4. ?? operator
+            bool? b = null;
+
+            //bool c=b == null ? true:false;
+            bool c = b ?? true;
+            // b가 null 이면 c에 true 넣음
+
+            // ?. 숙제
 
 
 

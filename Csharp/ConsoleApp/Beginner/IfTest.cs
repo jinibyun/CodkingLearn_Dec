@@ -43,6 +43,8 @@ namespace ConsoleApp.Beginner
                     Console.WriteLine("Vowel");
                     break;
                 case 'o':
+                case 'k':
+                    // break 걸지 않으면 or ||  조건문이 된다 
                     Console.WriteLine("Vowel");
                     break;
                 case 'u':
