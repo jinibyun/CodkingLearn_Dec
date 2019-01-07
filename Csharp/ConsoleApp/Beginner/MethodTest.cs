@@ -11,7 +11,8 @@ namespace ConsoleApp.Beginner
         // pass by value
         public void TestPassByValue(int a)
         {
-            a *= 2;
+            //a *= 2;
+            a = 47;
         }
 
         // pass by ref
@@ -55,6 +56,27 @@ namespace ConsoleApp.Beginner
                 sum += member;
             }
             return sum;
+        }
+
+        public string TestStringParams(params string[] values)
+        {
+            string allTogether = "";
+            foreach (var member in values)
+            {
+                allTogether += member;
+            }
+            return allTogether;
+        }
+
+
+        public string TestObjectParams(params object[] values)
+        {
+            string allTogether = "";
+            foreach (var member in values)
+            {
+                allTogether += member;
+            }
+            return allTogether;
         }
     }
 }

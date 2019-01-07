@@ -237,6 +237,7 @@ namespace ConsoleApp.Assignment
 
             int intMax = int.MaxValue;
             int intMin = int.MinValue;
+          
 
             Console.WriteLine("int intMax : {0}", intMax);
             Console.WriteLine("int intMin : {0}", intMin);
