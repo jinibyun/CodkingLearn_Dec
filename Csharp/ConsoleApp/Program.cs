@@ -216,6 +216,10 @@ namespace ConsoleApp
             Console.WriteLine(classTest_Basic2.BenchmarkPrice);
             Console.WriteLine(classTest_Basic2.BenchmarkShare);
 
+
+
+
+           
             // 3. Property: Indexer
             Console.WriteLine("=================== Property: Indexer  ================");
             var classTest2 = new ClassTest_Indexer();

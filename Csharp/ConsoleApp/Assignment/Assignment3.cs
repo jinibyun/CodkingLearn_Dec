@@ -263,6 +263,12 @@ namespace ConsoleApp.Assignment
             Console.WriteLine("REFERENCE (1) : https://www.codeproject.com/Articles/265755/Difference-between-Class-and-Structure-in-NET");
             // 1) Classes are Reference types and Structures are Values types.
 
+
+            // Struct
+
+            // In C#, a structure is a value type data type. 
+            // It helps you to make a single variable hold related data of various data types. 
+            // The struct keyword is used for creating a structure.
             MyClass _myClassObject1 = new MyClass();
             _myClassObject1.DataMember = 10;
             MyClass _myClassObject2 = _myClassObject1;
@@ -271,7 +277,7 @@ namespace ConsoleApp.Assignment
         }
 
 
-        // # 3
+        // # 3 Method
         public static int[] removeDuplicate(int[] a)
         {
             List<int> result = new List<int>();
@@ -288,7 +294,7 @@ namespace ConsoleApp.Assignment
         }
 
 
-        // # 6
+        // # 6 Method
         static void OutMethod(out int i, string a, string b)
         {
             i = 37;

@@ -29,13 +29,14 @@ namespace ConsoleApp.Assignment
             productColor = pcolor;
         }
 
+        // 3. Let's define there are two kinds of product status: InStock, Out of Stock
+        // Define these two as enum type
         public enum Status
         {
             InStock = 1,
             OutofStock = 2
         }
-        // 3. Let's define there are two kinds of product status: InStock, OutofStock
-        // Define these two as enum type
+       
 
 
 
