@@ -9,7 +9,7 @@ namespace ConsoleApp.Intermediate
     public class ClassTest_Indexer
     {
         string[] words = "The quick brown fox".Split();
-
+       
         /*
         Indexers provide a natural syntax for accessing elements in a class or struct that
         encapsulate a list or dictionary of values. Indexers are similar to properties, but are

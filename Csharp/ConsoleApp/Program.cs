@@ -26,15 +26,21 @@ namespace ConsoleApp
 
             // D. Assignment
              AssignmentTest();
-        }
+
+
+      
+    }
 
         private static void AssignmentTest()
         {
             //var cshsarpTest = new ChsarpTest();
             //cshsarpTest.Test();
 
-            var assignment03 = new Assignment3();
-            assignment03.Test();
+            //var assignment03 = new Assignment3();
+            //assignment03.Test();
+
+            var assignment04 = new Assignment4();
+            assignment04.Test();
         }
 
         private static void Advanced()
