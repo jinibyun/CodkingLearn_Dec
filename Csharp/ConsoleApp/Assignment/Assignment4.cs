@@ -85,6 +85,17 @@ namespace ConsoleApp.Assignment
     }
 
 
+
+
+    public static class StClass
+    {
+        public static int Add(int a, int b)
+        {
+            return a + b;
+        }
+    }
+
+
     public class Assignment4
     {
         
@@ -205,12 +216,18 @@ namespace ConsoleApp.Assignment
 
 
             Console.WriteLine("Question 5 : Sealed class & Static class ");
-            // Sealed class: you cannot inherit from the class
+
             // Static class: you cannot instantiate the class
+            // A static class is very similar to non-static class, 
+            // however there's one difference: a static class  can't be instantiated. In different words, you can not use the new keyword to make a variable of that class type. As a result of there's no instance variable, you access the static class members  by using class name. 
+            // It is a sealed class
+            // As static class is sealed, so no class can inherit from a static class.
+
+            int st1 = StClass.Add(3, 7);
+            Console.WriteLine("int st1 = {0}", st1);
 
 
-
-
+            // Sealed class: you cannot inherit from the class
 
         }
 
