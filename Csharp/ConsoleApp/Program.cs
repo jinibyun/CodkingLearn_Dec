@@ -39,8 +39,12 @@ namespace ConsoleApp
             //var assignment03 = new Assignment3();
             //assignment03.Test();
 
-            var assignment04 = new Assignment4();
-            assignment04.Test();
+            //var assignment04 = new Assignment4();
+            //assignment04.Test();
+
+            var assignment05 = new Assignment5();
+            assignment05.Test();
+
         }
 
         private static void Advanced()

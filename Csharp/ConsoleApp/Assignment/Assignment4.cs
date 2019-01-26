@@ -51,10 +51,10 @@ namespace ConsoleApp.Assignment
             SubId = i;
             SubName = n;
         }
-        public override void Display()
-        {
-            Console.WriteLine("This is SubCategory Class");
-        }
+        //public override void Display()
+        //{
+        //    Console.WriteLine("This is SubCategory Class");
+        //}
 
         public void DisplaySub()
         {
@@ -170,7 +170,7 @@ namespace ConsoleApp.Assignment
             //This is possible, because Circle has been derived from Shape and you expect all methods and properties of Shape to exist in Circle.
             //Executing the Draw method by doing s.Draw() gives the following output:
 
-
+            
 
 
             // UPCASTING

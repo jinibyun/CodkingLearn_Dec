@@ -49,7 +49,9 @@
     <Compile Include="Advanced\InterfaceTest.cs" />
     <Compile Include="Assignment\Assignment3.cs" />
     <Compile Include="Assignment\Assignment4.cs" />
+    <Compile Include="Assignment\Assignment5.cs" />
     <Compile Include="Assignment\ChsarpTest.cs" />
+    <Compile Include="Assignment\Interfaces.cs" />
     <Compile Include="Assignment\InternalUser.cs" />
     <Compile Include="Assignment\PrivateUser.cs" />
     <Compile Include="Assignment\Product.cs" />
