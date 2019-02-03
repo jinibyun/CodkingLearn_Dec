@@ -22,10 +22,10 @@ namespace ConsoleApp
             // Intermediate_OtherThings();
 
             // C. Advanced
-            // Advanced();         
+             //Advanced();         
 
             // D. Assignment
-             AssignmentTest();
+            AssignmentTest();
 
 
       
@@ -42,8 +42,47 @@ namespace ConsoleApp
             //var assignment04 = new Assignment4();
             //assignment04.Test();
 
-            var assignment05 = new Assignment5();
-            assignment05.Test();
+            //var assignment05 = new Assignment5();
+            //assignment05.Test();
+
+            var assignment06 = new Assignment6();
+            assignment06.Test();
+
+            var a6 = new DelegateAssignment();
+            a6.methodFor2();
+
+            DateTime theApril = new DateTime(2019, 4, 18);
+            a6.methodFor4(theApril);
+
+            DateTime theMay = new DateTime(2019, 5, 28);
+            a6.methodFor5(theMay);
+
+            DateTime theJune = new DateTime(2019, 6, 28);
+            a6.methodFor6(theJune);
+
+            DateTime theJuly = new DateTime(2019, 7, 28);
+            a6.methodFor6plus(theJuly);
+
+
+            Console.WriteLine("\n");
+            Console.WriteLine("Q7 - Excercise for Event, Publisher and Subscriber ");
+
+            Blog myBlog = new Blog() { BlogName = "Dot Net For All" };
+            myBlog.BlogSubscribtionService = new BlogSubscriptionSerivce();
+
+            Reader reader1 = new Reader("Reader Lidia");
+            reader1.SubscribeForBlog(myBlog);
+
+            Reader reader2 = new Reader("Reader July");
+            reader2.SubscribeForBlog(myBlog);
+
+            Writer writer = new Writer(myBlog);
+            writer.ArticleCompleted();
+
+            Console.Read();
+
+
+
 
         }
 

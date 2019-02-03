@@ -49,7 +49,8 @@ namespace ConsoleApp.Advanced
 
         public void Test4(string p1)
         {
-            // Anonymous delegate : short way to write delegate.
+            //Anonymous delegate : short way to write delegate.
+
             //AnonymousDelegate anonDelegate = new AnonymousDelegate(
             //delegate(string text) {
             //    Console.WriteLine(text);
@@ -63,12 +64,15 @@ namespace ConsoleApp.Advanced
             //    Console.WriteLine(text);
             //};
 
+
+
+
             // much more clearer way: Lambda expression with "goes to" operator
-            // Action<string> anonDelegate = text => Console.WriteLine(text);
+            Action<string> anonDelegate = text => Console.WriteLine(text);
 
             // much much much more clearer way: Lambda expression with "goes to" operator
-            AnonymousDelegate anonDelegate = text => Console.WriteLine(text);
-            anonDelegate(p1);
+            AnonymousDelegate anonDelegate2 = text => Console.WriteLine(text);
+            anonDelegate2(p1);
         }
 
         private int StringToInt(string s)

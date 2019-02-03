@@ -259,6 +259,8 @@ namespace ConsoleApp.Assignment
             //It depicts basic concept of interface and class. 
             //(Print, fax and scanner)
             Console.WriteLine("7. INTERFACE");
+
+
             Documents docu1 = new Documents("Hello, Dodam", "How are you??");
             Documents docu2 = new Documents("No Reply Message", "");
             IMachines machine = new MultiFunctionPrinters();
