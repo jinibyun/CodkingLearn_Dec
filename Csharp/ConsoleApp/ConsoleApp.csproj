@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,16 +49,24 @@
     <Compile Include="Advanced\ExtensionMethodTest.cs" />
     <Compile Include="Advanced\GenericClass.cs" />
     <Compile Include="Advanced\InterfaceTest.cs" />
+    <Compile Include="Assignment\A7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assignment\A7.Designer.cs">
+      <DependentUpon>A7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Assignment\Assignment3.cs" />
     <Compile Include="Assignment\Assignment4.cs" />
     <Compile Include="Assignment\Assignment5.cs" />
     <Compile Include="Assignment\Assignment6.cs" />
+    <Compile Include="Assignment\Assignment7.cs" />
     <Compile Include="Assignment\ChsarpTest.cs" />
     <Compile Include="Assignment\Interfaces.cs" />
     <Compile Include="Assignment\InternalUser.cs" />
     <Compile Include="Assignment\PrivateUser.cs" />
     <Compile Include="Assignment\Product.cs" />
     <Compile Include="Assignment\ProtectedUser.cs" />
+    <Compile Include="Assignment\TimeData.cs" />
     <Compile Include="Assignment\User.cs" />
     <Compile Include="Beginner\ArrayTest.cs" />
     <Compile Include="Intermediate\ClassTest_Basic2.cs" />
@@ -87,6 +97,10 @@
     <None Include="App.config" />
     <None Include="ReadMe.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Assignment\A7.resx">
+      <DependentUpon>A7.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
