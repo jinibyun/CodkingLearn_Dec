@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFTutorials", "EFTutorials\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWebApi", "HelloWebApi\HelloWebApi.csproj", "{64E18AD5-2B05-4213-BB55-10089C379CDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado.net", "Ado.net\Ado.net.csproj", "{6255D614-4856-475F-87F7-DB42648D0F5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{64E18AD5-2B05-4213-BB55-10089C379CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64E18AD5-2B05-4213-BB55-10089C379CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64E18AD5-2B05-4213-BB55-10089C379CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6255D614-4856-475F-87F7-DB42648D0F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6255D614-4856-475F-87F7-DB42648D0F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6255D614-4856-475F-87F7-DB42648D0F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6255D614-4856-475F-87F7-DB42648D0F5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
