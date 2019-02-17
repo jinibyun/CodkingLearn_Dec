@@ -489,6 +489,8 @@ INSERT INTO TestOrder VALUES (8, 'M1', 'P1', 2)
 INSERT INTO TestOrder VALUES (9, 'M2', 'P3', 1)
 INSERT INTO TestOrder VALUES (10, 'M1', 'P2', 1)
 
+SELECT * FROM TestOrder
+
 -- Order Count per customer
 SELECT T2.userName, T3.productName, SUM(sellCount ) Total
 FROM TestOrder T1 INNER JOIN TestMember T2 

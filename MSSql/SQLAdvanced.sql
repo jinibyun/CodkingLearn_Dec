@@ -10,10 +10,10 @@ A-1. VIEW
 --------------------------------------------------- */
 CREATE VIEW vTitleAuthorPublisher
 AS
-SELECT titles.title, authors.au_lname, publishers.pub_name
-FROM titles INNER JOIN titleauthor ON titles.title_id = titleauthor.title_id
-INNER JOIN authors ON titleauthor.au_id = authors.au_id
-INNER JOIN publishers ON titles.pub_id = publishers.pub_id
+	SELECT titles.title, authors.au_lname, publishers.pub_name
+	FROM titles INNER JOIN titleauthor ON titles.title_id = titleauthor.title_id
+	INNER JOIN authors ON titleauthor.au_id = authors.au_id
+	INNER JOIN publishers ON titles.pub_id = publishers.pub_id
 GO
 
 select * from vTitleAuthorPublisher
@@ -24,17 +24,17 @@ A-2. STORED PROCEDURE
 --------------------------------------------------- */
 CREATE PROC uspGetPricePerBook
 AS
-SELECT pub_id, type, royalty, ytd_sales, AVG(price) 
-FROM titlesGROUP BY pub_id, type, royalty, ytd_sales
+	SELECT pub_id, type, royalty, ytd_sales, AVG(price) 
+	FROM titlesGROUP BY pub_id, type, royalty, ytd_sales
 GO 
 
 
 -- 1 create
 CREATE PROC uspGetTitleWithPrice 
-@v_price int
+@v_price int
 AS
-SELECT * FROM titles 
-WHERE price > @v_price 
+	SELECT * FROM titles 
+	WHERE price > @v_price 
 
 EXEC uspGetTitleWithPrice 30 
 
