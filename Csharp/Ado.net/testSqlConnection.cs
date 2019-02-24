@@ -13,7 +13,7 @@ namespace Ado.net
         {
             // 1. Instantiate the connection
             SqlConnection conn = new SqlConnection(
-                "Data Source=(local);Initial Catalog=Northwind;Integrated Security=SSPI");
+                @"Data Source=LAPTOP-L82N2TN1\SQLEXPRESS;Initial Catalog=Pubs;Integrated Security=SSPI");
 
             SqlDataReader rdr = null;
 

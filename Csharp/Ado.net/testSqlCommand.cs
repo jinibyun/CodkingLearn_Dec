@@ -13,7 +13,7 @@ namespace Ado.net
         public testSqlCommand()
         {
             conn = new SqlConnection(
- "Data Source=(local);Initial Catalog=Northwind;Integrated Security=SSPI");
+                @"Data Source=LAPTOP-L82N2TN1\SQLEXPRESS;Initial Catalog=Pubs;Integrated Security=SSPI");
         }
         public void DoTest()
         {
@@ -71,7 +71,7 @@ namespace Ado.net
                 conn.Open();
 
                 // 1. Instantiate a new command with a query and connection
-                SqlCommand cmd = new SqlCommand("select CategoryName from Categories", conn);
+                SqlCommand cmd = new SqlCommand("select title from titles", conn);
 
                 // 2. Call Execute reader to get query results
                 rdr = cmd.ExecuteReader();
@@ -110,13 +110,12 @@ namespace Ado.net
 
                 // prepare command string
                 string insertString = @"
-                 insert into Categories
-                 (CategoryName, Description)
-                 values ('Miscellaneous', 'Whatever doesn''t fit elsewhere')";
+                 insert into Titles
+                 ...";
 
                 // 1. Instantiate a new command with a query and connection
                 SqlCommand cmd = new SqlCommand(insertString, conn);
-
+                
                 // 2. Call ExecuteNonQuery to send command
                 cmd.ExecuteNonQuery();
             }

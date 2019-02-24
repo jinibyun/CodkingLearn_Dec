@@ -16,12 +16,12 @@ namespace Ado.net
             SqlConnection conn = null;
             SqlDataReader reader = null;
 
-            string inputCity = "London";
+            string titleId = "BU1032";
             try
             {
                 // instantiate and open connection
                 conn = new
-                    SqlConnection("Server=(local);DataBase=Northwind;Integrated Security=SSPI");
+                    SqlConnection(@"Data Source=LAPTOP-L82N2TN1\SQLEXPRESS;Initial Catalog=Pubs;Integrated Security=SSPI");
                 conn.Open();
 
                 // don't ever do this
@@ -30,12 +30,12 @@ namespace Ado.net
 
                 // 1. declare command object with parameter
                 SqlCommand cmd = new SqlCommand(
-                    "select * from Customers where city = @City", conn);
+                    "select * from Titles where title_id = @TitleId", conn); // oracle ?
 
                 // 2. define parameters used in command object
                 SqlParameter param = new SqlParameter();
-                param.ParameterName = "@City";
-                param.Value = inputCity;
+                param.ParameterName = "@TitleId";
+                param.Value = titleId;
 
                 // 3. add new parameter to command object
                 cmd.Parameters.Add(param);
@@ -47,8 +47,8 @@ namespace Ado.net
                 while (reader.Read())
                 {
                     Console.WriteLine("{0}, {1}",
-                        reader["CompanyName"],
-                        reader["ContactName"]);
+                        reader["title_id"],
+                        reader["title"]);
                 }
             }
             finally

@@ -13,7 +13,7 @@ namespace Ado.net
         public void DoTest()
         {
             // run a simple stored procedure
-            RunStoredProc();
+            // RunStoredProc();
             // run a stored procedure that takes a parameter
             RunStoredProcParams();
         }
@@ -75,21 +75,20 @@ namespace Ado.net
 
             // typically obtained from user
             // input, but we take a short cut
-            string custId = "FURIB";
+            //string custId = "FURIB";
 
-            Console.WriteLine("\nCustomer Order History:\n");
-
+            //Console.WriteLine("\nCustomer Order History:\n");
+            int priceId = 50;
             try
             {
                 // create and open a connection object
                 conn = new
-                    SqlConnection("Server=(local);DataBase=Northwind;Integrated Security=SSPI");
+                    SqlConnection(@"Data Source=LAPTOP-L82N2TN1\SQLEXPRESS;Initial Catalog=Pubs;Integrated Security=SSPI");
                 conn.Open();
 
                 // 1. create a command object identifying
                 // the stored procedure
-                SqlCommand cmd = new SqlCommand(
-                    "CustOrderHist", conn);
+                SqlCommand cmd = new SqlCommand("uspGetTitleWithPrice", conn);
 
                 // 2. set the command object so it knows
                 // to execute a stored procedure
@@ -98,7 +97,7 @@ namespace Ado.net
                 // 3. add parameter to command, which
                 // will be passed to the stored procedure
                 cmd.Parameters.Add(
-                    new SqlParameter("@CustomerID", custId));
+                    new SqlParameter("@v_price", priceId));
 
                 // execute the command
                 rdr = cmd.ExecuteReader();
@@ -107,9 +106,9 @@ namespace Ado.net
                 while (rdr.Read())
                 {
                     Console.WriteLine(
-                        "Product: {0,-35} Total: {1,2}",
-                        rdr["ProductName"],
-                        rdr["Total"]);
+                        "Id {0} Title: {1} Price: {2}",
+                        rdr["title_Id"],
+                        rdr["title"], rdr["price"]);
                 }
             }
             finally
