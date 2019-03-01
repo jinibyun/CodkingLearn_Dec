@@ -16,6 +16,7 @@
         <AssociationConnector Association="SchoolDBModel.FK_Teacher_Standard" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.FK_StudentAddress_Student" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.StudentCourse" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SchoolDBModel.sysdiagram" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

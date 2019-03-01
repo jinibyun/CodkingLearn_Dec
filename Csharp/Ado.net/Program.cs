@@ -13,8 +13,17 @@ namespace Ado.net
             // var obj = new testSqlConnection();
             // var obj = new testSqlCommand();
             // var obj = new testDynamicSQL();
-            var obj = new testStoreProc();
-            obj.DoTest();
+            //var obj = new testStoreProc();
+            //obj.DoTest();
+            AssignmentTest();
+        }
+
+        private static void AssignmentTest()
+        {
+            var assignment09 = new Assignment09();
+            assignment09.test();
+
+
         }
     }
 }

@@ -15,13 +15,22 @@ namespace EFTutorials
         */
         private static void Main(string[] args)
         {
+
+
+            AssignmentTest();
+
             // two versions: Insert, Update and Delete
-            // AddUpdateDeleteEntityInConnectedScenario();
-            // AddUpdateEntityInDisconnectedScenario();
+
+            //AddUpdateDeleteEntityInConnectedScenario();
+            //AddUpdateEntityInDisconnectedScenario();
+
+
+
+
 
             // LinqToEntitiesQueries();
             // FindEntity();
-            // LazyLoading();
+            // XXXX();
             // ExplicitLoading();
             // ExecuteRawSQLusingSqlQuery();
             // ExecuteSqlCommand();
@@ -35,12 +44,18 @@ namespace EFTutorials
             // EntityEntry();
             // OptimisticConcurrency();
             // TransactionSupport();
-            SetEntityState();
+            // SetEntityState();
 
             Console.ReadLine();
         }
 
+        private static void AssignmentTest()
+        {
+            var assignment10 = new Assignment10();
+            assignment10.test();
 
+
+        }
         /*
         Entity Framework builds and executes INSERT, UPDATE, and DELETE statements for the entities whose EntityState is Added, Modified, or Deleted 
         when the DbContext.SaveChanges() method is called. 
@@ -60,23 +75,32 @@ namespace EFTutorials
                 var newStudent = context.Students.Add(
                     new Student()
                     {
-                        StudentName = "Jonathan",
-                        StudentAddress = new StudentAddress() {
-                                            Address1 = "1, Harbourside",
-                                            City = "Jersey City",
-                                            State = "NJ"
-                        }
+                        StudentName = "Dodam11",
+                        //StudentAddress = new StudentAddress()
+                        //{
+                        //    Address1 = "51 maple",
+                        //    City = "torinto City",
+                        //    State = "ON"
+                        //}
                     }
                  );
                 context.SaveChanges(); // Executes Insert command
 
-                //Edit student name
-                newStudent.StudentName = "Alex";
-                context.SaveChanges(); // Executes Update command
+
+                //var students = context.Students.ToList();
+                //var foundStu = students.Where(x => x.StudentName == "Jini").FirstOrDefault();
+
+                //if (foundStu != null)
+                //{
+                //    //Edit student name
+                //    foundStu.StudentName = "Alex";
+                //    context.SaveChanges(); // Executes Update command
+                //}
+
 
                 //Remove student
-                context.Students.Remove(newStudent);
-                context.SaveChanges(); // Executes Delete command
+                //context.Students.Remove(newStudent);
+                //context.SaveChanges(); // Executes Delete command
             }
 
             Console.WriteLine("*** AddUpdateDeleteEntityInConnectedScenario Ends ***");
@@ -93,9 +117,9 @@ namespace EFTutorials
         {
             Console.WriteLine("*** AddUpdateEntityInDisconnectedScenario Starts ***");
 
-            // disconnected entities
+            //disconnected entities
             var newStudent = new Student() { StudentName = "Bill" };
-            var existingStudent = new Student() { StudentID = 10, StudentName = "Chris" };
+            var existingStudent = new Student() { StudentID = 1, StudentName = "Chris" };
 
             using (var context = new SchoolDBEntities())
             {
@@ -187,8 +211,8 @@ namespace EFTutorials
             loads related entities as part of the query, so that we don't need to execute a separate query 
             for related entities. Eager loading is achieved using the Include() method.
             See example: http://www.entityframeworktutorial.net/eager-loading-in-entity-framework.aspx
-        2. Lazy Loading
-            Lazy loading is delaying the loading of related data, until you specifically request for it.
+        2. default
+            default is the getting of related data.
             See example below
             Default: Lazy Loading set to true
         3. Explicit Loading
@@ -196,14 +220,13 @@ namespace EFTutorials
             but it must be done with an explicit call. Use the Load() method to load related entities explicitly.
             See example below
         */
-        public static void LazyLoading()
+        public static void XXXX()
         {
             Console.WriteLine("*** LazyLoading Starts ***");
 
             using (var context = new SchoolDBEntities())
             {
                 context.Database.Log = Console.Write;
-
                 Student student = context.Students.Where(s => s.StudentID == 1).FirstOrDefault<Student>();
 
                 Console.WriteLine("*** Retrieve standard from the database ***");
