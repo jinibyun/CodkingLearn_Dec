@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "amd",
+        "outDir": "scripts/",
+        "sourceMap": true
+    },
+    "exclude": [
+        "namespace",
+        "module",
+        "ambient",
+        "node_modules"
+      ],
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true
+    // only when including specific files for compilation over javascript file
+    //,
+    //"files": [
+    //    "First.ts"
+    //]
+}
