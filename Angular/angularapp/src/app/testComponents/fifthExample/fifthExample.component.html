@@ -1,0 +1,68 @@
+<p>Explanation</p>
+<ul>
+  <li>Forms and Event</li>
+  <li>(It is similar to thirdExample, but simpler)</li>
+  <li>install font-awesome: npm install font-awesome --save</li>
+  <li>ngModel and 2 way data binding</li>
+</ul>
+
+<button (click)="showUserForm = !showUserForm" class="btn btn-dark mb-3">Add User</button>
+<div class="card card-body mb-3" *ngIf="showUserForm">
+  <h2>Add User</h2>
+  <form (submit)="onSubmit($event)">
+    <div class="form-group">
+      <label>First Name</label>
+      <!-- to use ngModel, "FormsModule" must be registered in app.module.ts -->
+      <input type="text" [(ngModel)] = "user.firstName" class="form-control" name="fristName">
+    </div>
+<!-- {{ user.firstName }} -->
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" [(ngModel)] = "user.lastName" class="form-control" name="lastName">
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" [(ngModel)] = "user.age" class="form-control" name="age">
+    </div>
+    <div class="form-group">
+      <label>Street Address</label>
+      <input type="text" [(ngModel)] = "user.address.street" class="form-control" name="street">
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" [(ngModel)] = "user.address.city" class="form-control" name="city">
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" [(ngModel)] = "user.address.state" class="form-control" name="state">
+    </div>
+
+    <!-- event and event handler: javascript -->
+    <button (click)="addUser()" [disabled]="user.firstName == '' || user.lastName == '' " class="btn btn-block mb-3">Add
+      New User</button>
+
+  </form>
+</div>
+
+<h2>Users</h2>
+
+
+<ul class="list-unstyled" *ngIf="loaded && users?.length > 0;else noUsers">
+  <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive" [style.border-color]="user.isActive? 'green' : ''">
+    <h3>
+      {{ user.firstName }} {{ user.lastName }}
+      <small *ngIf="user.age && user.address"><button (click)="user.hide = !user.hide" class="btn btn-dark btn-sm"><i
+            [ngClass]="user.hide ? 'fa fa-plus': 'fa fa-minus' "></i></button></small>
+    </h3>
+    <ul class="list-group" *ngIf="!user.hide && user.age && user.address">
+      <li class="list-group-item">Age: {{ user.age }}</li>
+      <li class="list-group-item">Address: {{ user.address.city }} {{user.address.street}} {{user.address.state}}</li>
+      <li class="list-group-item">Joined:{{ user.registered | date: "yyyy-mm-dd" }}</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- ng-template -->
+<ng-template #noUsers>No Users Found</ng-template>
+<!-- <h4 *ngIf="users.length == 0">No Users Found</h4> -->
+<h4 *ngIf="!loaded">Loading users...</h4>

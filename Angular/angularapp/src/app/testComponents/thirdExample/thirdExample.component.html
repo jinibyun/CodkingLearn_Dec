@@ -1,0 +1,61 @@
+<!-- when it comes to bootstrap4, it can be explained separately -->
+<!-- property binding and bootstrap class binding and ngClass and ngStyle : ngClass and ngStyle is very similar concept -->
+
+
+<p>Explanation</p>
+<ul>
+    <li>generate component and ngInit</li>
+    <li>npm install bootstrap</li>
+    <li>
+      Template Syntax
+      <ul>
+        <li>property binding</li>
+        <li>bootstrap class binding</li>
+        <li>ngClass</li>
+        <li>ngStyle</li>
+        <li> | formating </li>
+      </ul>
+    </li>
+    
+</ul>
+
+<h2>Users</h2>
+<!-- property binding and ngClass binding -->
+<button [disabled] = "!enabledAdd" class="btn btn-block mb-3" [ngClass]="currentClasses" >Add New User</button>
+
+<ul class="list-unstyled" *ngIf="loaded && users?.length > 0;else noUsers">
+  <!-- all structual directive start with * : if, switch, for -->
+  <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light] = "user.isActive" [style.border-color] ="user.isActive? 'green' : ''"> <!--bootstrap class binding -->
+
+    <div class="row">
+      <div class="col-sm-4">
+        <!-- there are 3 ways of property binding -->
+        <!-- <img *ngIf="user.image" [src] ="user.image" class="img-fluid" alt=""> -->
+        <!-- another way-->
+        <!-- <img *ngIf="user.image" src="{{user.image}}" class="img-fluid" alt=""> -->
+        <img *ngIf="user.image" bind-src="user.image" class="img-fluid" alt="">
+      </div>
+      <div class="col-sm-8">
+          <h3 [ngStyle]="currentStyles">
+            <!-- pipe : this is about formatting -->
+            {{ user.firstName | uppercase }} {{ user.lastName | lowercase }}
+            <!-- another way of property binding. interpolation is only for string. It is recommended for string as above -->
+            <!-- <span [textContent]="user.firstName"></span> -->
+          </h3>
+          <ul class="list-group" *ngIf="showExtended && user.age && user.address">
+            <li class="list-group-item">Age: {{ user.age }}</li>
+            <li class="list-group-item">Address: {{ user.address.city }} {{user.address.street}} {{user.address.state}}</li>
+            <li class="list-group-item">Balance:{{ user.balance | currency:"GBP" }} until {{ 1 | percent }}</li>
+            <li class="list-group-item">Joined:{{ user.registered | date: "yyyy-mm-dd" }}</li>
+            <li class="list-group-item" ngNonBindable>{{ 5 | number: "1.2"}}</li>
+          </ul>  
+      </div>
+    </div>
+    
+  </li>
+</ul>
+
+<!-- ng-template -->
+<ng-template #noUsers>No Users Found</ng-template>
+<!-- <h4 *ngIf="users.length == 0">No Users Found</h4> -->
+<h4 *ngIf="!loaded">Loading users...</h4>

@@ -1,0 +1,11 @@
+1. After all development is done, then build to create js file 
+    ng build --prod
+2. It will generate all js files and other files such as css and index.html on "dist" folder which is set up on "tsconfig.json"
+
+3. go to "https://pages.github.com/" then follow instruction
+    clone, copy dist folder files into folder and push 
+4. Then make sure all files exist under https://github.com/[yourName]/[yourName].github.io repository    
+
+5. done
+
+6. Go to browser https://[yourName].github.io
