@@ -106,7 +106,8 @@ namespace Module1.Controllers
         public IActionResult Delete(int id)
         {
             productRepository.DeleteProduct(id);
-            return Ok("Product Deleted...");
+            return Ok("Product Deleted...");
+
         }
     }
 }
